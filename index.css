@@ -7,6 +7,10 @@ body {
   margin: 0px;
   background-color: #fffdf5;
   color: #6c6c6c;
+  font-family: "Quattrocento", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
 }
 
 * {
@@ -28,7 +32,7 @@ body {
 .front-page-image {
   position: relative;
   height: 120vw;
-  background-image: url("/resources/images/imagen_pareja1.jpeg");
+  background-image: url("/resources/images/jandr.png");
   background-position: center;
   background-size: cover;
 }
@@ -48,9 +52,13 @@ body {
 }
 .front-page .phrase {
   width: 75%;
-  font-size: 25px;
+  font-size: 35px;
   font-family: "Ephesis", cursive;
   margin: 10px 0 15px 0;
+}
+.front-page .phrase .quote {
+  text-align: right;
+  font-size: 25px;
 }
 .front-page svg {
   width: 10px;
@@ -64,10 +72,32 @@ body {
   stroke: none;
 }
 
-.countdown .title1 {
+.title1 {
+  font-family: "Quattrocento", serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 45px;
   color: #c08f40;
   margin-bottom: 20px;
+}
+
+.subtitle {
+  font-family: "Quattrocento", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 35px;
+  color: #c08f40;
+}
+
+.countdown {
+  box-shadow: 0px 2px 17px 0px rgba(0, 0, 0, 0.75);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 50px 0 50px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .countdown .clock {
   display: flex;
@@ -79,6 +109,37 @@ body {
 }
 .countdown .clock .time-box {
   padding: 0 10px 0 10px;
+}
+
+.ceremony-party {
+  display: flex;
+  flex-direction: column;
+}
+.ceremony-party .box-ornament {
+  border: 1px solid #c08f40;
+  margin: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ceremony-party .box-ornament .ceremony {
+  background-color: #f5f5f5;
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+}
+.ceremony-party .box-ornament .ceremony-rings-image {
+  width: 35%;
+}
+.ceremony-party .box-ornament .ceremony-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.ceremony-party .box-ornament .ceremony p {
+  margin: 18px 0;
 }
 
 .quattrocento-regular {
@@ -94,8 +155,8 @@ body {
 }
 
 .padding-top-botom {
-  padding-top: 20vw;
-  padding-bottom: 20vw;
+  padding-top: 15vw;
+  padding-bottom: 15vw;
 }
 
 .padding-botom {
@@ -132,4 +193,57 @@ body {
 #days, #hours, #minutes, #seconds {
   font-size: 35px;
   color: #ba9972;
+}
+
+.heart {
+  margin-top: 50px;
+  height: 25px;
+  width: 25px;
+  background-color: #c08f40;
+  transform: rotate(-45deg);
+  position: relative;
+  animation: heartbeat 1s infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  height: 25px;
+  width: 25px;
+  background-color: #c08f40;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -12.5px;
+  left: 0px;
+}
+
+.heart::after {
+  left: 12.5px;
+  top: 0px;
+}
+
+.button {
+  margin-top: 5px;
+  background-color: #ba9972;
+  border-radius: 10px;
+  line-height: 17px;
+  padding: 15px 30px;
+  max-width: 230px;
+  display: inline-block;
+  color: #f5f5f5;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1) rotate(-45deg);
+  }
+  25% {
+    transform: scale(1.25) rotate(-45deg);
+  }
+  45% {
+    transform: scale(1.5) rotate(-45deg);
+  }
 }/*# sourceMappingURL=index.css.map */
