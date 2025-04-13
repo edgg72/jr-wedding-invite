@@ -1,0 +1,135 @@
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  background-color: #fffdf5;
+  color: #6c6c6c;
+}
+
+* {
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.front-page {
+  position: relative;
+}
+.front-page .date {
+  font-family: "Ephesis", cursive;
+  font-size: 30px;
+}
+.front-page-image {
+  position: relative;
+  height: 120vw;
+  background-image: url("/resources/images/imagen_pareja1.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+.front-page-info {
+  padding: 10px;
+  position: relative;
+}
+.front-page .logo {
+  width: 50%;
+}
+.front-page .logo-image {
+  position: relative;
+  width: 100%;
+}
+.front-page .logo .name {
+  margin-bottom: 20px;
+}
+.front-page .phrase {
+  width: 75%;
+  font-size: 25px;
+  font-family: "Ephesis", cursive;
+  margin: 10px 0 15px 0;
+}
+.front-page svg {
+  width: 10px;
+  height: 30px;
+}
+.front-page .adorno-gota-1 {
+  transform: scaleY(-1);
+}
+.front-page path {
+  fill: #c08f40;
+  stroke: none;
+}
+
+.countdown .title1 {
+  font-size: 45px;
+  color: #c08f40;
+  margin-bottom: 20px;
+}
+.countdown .clock {
+  display: flex;
+  justify-content: center;
+  font-family: "Quattrocento", serif;
+}
+.countdown .clock > .time-box + .time-box {
+  border-left: solid #6c6c6c;
+}
+.countdown .clock .time-box {
+  padding: 0 10px 0 10px;
+}
+
+.quattrocento-regular {
+  font-family: "Quattrocento", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.quattrocento-bold {
+  font-family: "Quattrocento", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.padding-top-botom {
+  padding-top: 20vw;
+  padding-bottom: 20vw;
+}
+
+.padding-botom {
+  padding-bottom: 20vw;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ephesis-regular {
+  font-family: "Ephesis", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.up-flowers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+}
+
+.down-flowers {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  transform: rotate(180deg);
+}
+
+#days, #hours, #minutes, #seconds {
+  font-size: 35px;
+  color: #ba9972;
+}/*# sourceMappingURL=index.css.map */
