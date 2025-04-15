@@ -62,7 +62,8 @@ body {
         font-size: 35px;
         font-family: "Ephesis", cursive;
         margin: 10px 0 15px 0;
-        .quote{
+
+        .quote {
             text-align: right;
             font-size: 25px;
         }
@@ -76,13 +77,14 @@ body {
     .adorno-gota-1 {
         transform: scaleY(-1);
     }
+
     path {
         fill: #c08f40;
         stroke: none;
     }
 }
 
-.title1{
+.title1 {
     font-family: "Quattrocento", serif;
     font-weight: 700;
     font-style: normal;
@@ -91,14 +93,15 @@ body {
     margin-bottom: 20px;
 }
 
-.subtitle{
+.subtitle {
     font-family: "Quattrocento", serif;
     font-weight: 400;
     font-style: normal;
     font-size: 35px;
     color: #c08f40;
 }
-.countdown{
+
+.countdown {
     box-shadow: 0px 2px 17px 0px rgba(0, 0, 0, 0.75);
     margin-top: 15px;
     margin-bottom: 15px;
@@ -107,49 +110,64 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    .clock{
+
+    .clock {
         display: flex;
         justify-content: center;
         font-family: "Quattrocento", serif;
-        & > .time-box + .time-box{
+
+        &>.time-box+.time-box {
             border-left: solid #6c6c6c;
         }
-        .time-box{
+
+        .time-box {
             padding: 0 10px 0 10px;
         }
     }
 }
-.ceremony-party{
- display: flex;
- flex-direction: column;
 
- .box-ornament{
-    border: 1px solid #c08f40;
-    margin: 15px;
-    padding: 20px;
-display: flex;
-flex-direction: column;
-align-items: center;
-.ceremony, .party{
-    background-color: #f5f5f5;
-    position: relative;
-    width: 100%;
-    border-radius: 20px;
-    &-rings-image{
-        width: 35%;
-    }
-    &-info{
+.ceremony-party {
+    display: flex;
+    flex-direction: column;
+
+    .box-ornament {
+        border: 1px solid #c08f40;
+        margin: 15px;
+        padding: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 50px;
-    }
-    p{
-        margin: 18px 0;
+
+        .ceremony,
+        .party {
+            background-color: #f5f5f5;
+            position: relative;
+            width: 100%;
+            border-radius: 20px;
+
+            &-rings-image {
+                width: 35%;
+            }
+
+            &-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 50px;
+            }
+
+            p {
+                margin: 18px 0;
+            }
+        }
     }
 }
-}
+
+.photos {
+    box-shadow: 0px 2px 17px 0px rgba(0, 0, 0, 0.75);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 20px;
 }
 
 .quattrocento-regular {
@@ -168,6 +186,7 @@ align-items: center;
     padding-top: 15vw;
     padding-bottom: 15vw;
 }
+
 .padding-botom {
     padding-bottom: 20vw;
 }
@@ -198,9 +217,13 @@ align-items: center;
     width: 40%;
     transform: rotate(180deg);
 }
-#days, #hours, #minutes, #seconds{
+
+#days,
+#hours,
+#minutes,
+#seconds {
     font-size: 35px;
-        color: #ba9972;
+    color: #ba9972;
 }
 
 .heart {
@@ -213,7 +236,7 @@ align-items: center;
     animation: heartbeat 1s infinite;
 }
 
-.heart::before, 
+.heart::before,
 .heart::after {
     content: "";
     height: 25px;
@@ -232,7 +255,8 @@ align-items: center;
     left: 12.5px;
     top: 0px;
 }
-.button{
+
+.button {
     margin-top: 5px;
     background-color: #ba9972;
     border-radius: 10px;
@@ -245,17 +269,49 @@ align-items: center;
 
 @keyframes heartbeat {
     0% {
-        transform: scale(1)
-            rotate(-45deg);
+        transform: scale(1) rotate(-45deg);
     }
 
     25% {
-        transform: scale(1.25)
-            rotate(-45deg);
+        transform: scale(1.25) rotate(-45deg);
     }
 
     45% {
-        transform: scale(1.5)
-            rotate(-45deg);
+        transform: scale(1.5) rotate(-45deg);
+    }
+}
+
+.photos {
+    position: relative;
+
+    .slider-container {
+        position: relative;
+        display: flex;
+        overflow-x: scroll;
+        gap: 30px;
+        /* Vamos a añadir esto 👇 */
+        scroll-snap-type: x mandatory;
+    }
+
+    .polaroid {
+        position: relative;
+        width: 80%;
+        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+        padding: 20px 20px 40px 20px;
+        margin: 10px;
+
+        img {
+            position: relative;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .slider-item {
+        flex: 0 0 80%;
+        width: 80%;
+        object-fit: cover;
+        /* Vamos a añadir esto 👇 */
+        scroll-snap-align: center;
     }
 }
