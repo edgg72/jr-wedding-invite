@@ -20,90 +20,111 @@ body {
 .container {
     position: relative;
     width: 100%;
+
     .gray-section {
-            background-color: #f5f5f5;
-            position: relative;
-            width: 100%;
-            border-radius: 20px;
+        background-color: #f5f5f5;
+        position: relative;
+        width: 100%;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-icon {
+            width: 35%;
+        }
+
+        &-info {
             display: flex;
             flex-direction: column;
             align-items: center;
-            &-icon {
-                width: 35%;
-            }
-
-            &-info {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-bottom: 50px;
-            }
-            p {
-                margin: 18px 0;
-                padding: 0 20px 0 20px;
-            }
+            margin-bottom: 50px;
         }
-        .photos {
+
+        p {
+            margin: 18px 0;
+            padding: 0 20px 0 20px;
+        }
+
+        svg {
+            width: 80%;
+        }
+
+        .adornos {
+            height: 20px;
+            overflow: hidden;
             position: relative;
-            border-radius: 0;
-            box-shadow: 0px 2px 17px 0px rgba(0, 0, 0, 0.75);
-            margin-top: 15px;
-            margin-bottom: 15px;
-            padding-bottom: 20px;
-            .slider-container {
+
+            svg {
                 position: relative;
-                width: 100%;
-                display: flex;
-                overflow-x: scroll;
-                /* Vamos a añadir esto 👇 */
-                scroll-snap-type: x mandatory;
+                width: 30%;
             }
-        
-            .polaroid {
-                position: relative;
-                box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.75);
-                padding: 15px 15px 40px 15px;
-                margin: 5px;
-        
-                flex: 0 0 70%;
-                object-fit: cover;
-                /* Vamos a añadir esto 👇 */
-                scroll-snap-align: center;
-                img {
-                    position: relative;
-                    width: 100%;
-                    object-fit: cover;
-                }
-            }
-        
-        }
-
-
-.countdown {
-    border-radius: 0;
-    box-shadow: 0px 2px 17px 0px rgba(0, 0, 0, 0.75);
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding: 25px 0 25px 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .clock {
-        display: flex;
-        justify-content: center;
-        font-family: "Quattrocento", serif;
-
-        &>.time-box+.time-box {
-            border-left: solid #6c6c6c;
-        }
-
-        .time-box {
-            padding: 0 10px 0 10px;
         }
     }
-}
+
+    .photos {
+        position: relative;
+        border-radius: 0;
+        box-shadow: 0px 2px 17px 0px rgba(0, 0, 0, 0.75);
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding-bottom: 20px;
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            overflow-x: scroll;
+            /* Vamos a añadir esto 👇 */
+            scroll-snap-type: x mandatory;
+        }
+
+        .polaroid {
+            position: relative;
+            box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.75);
+            padding: 15px 15px 40px 15px;
+            margin: 5px;
+
+            flex: 0 0 70%;
+            object-fit: cover;
+            /* Vamos a añadir esto 👇 */
+            scroll-snap-align: center;
+
+            img {
+                position: relative;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
+
+
+    .countdown {
+        border-radius: 0;
+        box-shadow: 0px 2px 17px 0px rgba(0, 0, 0, 0.75);
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 25px 0 25px 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .clock {
+            display: flex;
+            justify-content: center;
+            font-family: "Quattrocento", serif;
+
+            &>.time-box+.time-box {
+                border-left: solid #6c6c6c;
+            }
+
+            .time-box {
+                padding: 0 10px 0 10px;
+            }
+        }
+    }
 }
 
 .front-page {
@@ -169,10 +190,11 @@ body {
 }
 
 .title1 {
-    font-family: "Quattrocento", serif;
+    font-family: "Grey Qo";
     font-weight: 700;
     font-style: normal;
-    font-size: 45px;
+    font-size: 90px;
+    line-height: 70px;
     color: #c08f40;
     margin-bottom: 20px;
     width: 80%;
@@ -180,10 +202,10 @@ body {
 }
 
 .subtitle {
-    font-family: "Quattrocento", serif;
+    font-family: "Grey Qo", "Quattrocento", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 35px;
+    font-size: 65px;
     color: #c08f40;
 }
 
@@ -265,7 +287,8 @@ body {
     transform: rotate(-45deg);
     position: relative;
     animation: heartbeat 1s infinite;
-    &-div{
+
+    &-div {
         margin-bottom: 15px;
     }
 }
@@ -300,17 +323,9 @@ body {
     display: inline-block;
     color: #f5f5f5;
 }
-.adornos{
-    height: 20px;
-    overflow: hidden;
-    position: relative;
-    svg{
-        position: relative;
-        width: 30%;
-    }
-    &-linea{
-        fill: #9b774c
-     }
+
+path {
+    fill: #9b774c
 }
 
 @keyframes heartbeat {
@@ -326,4 +341,3 @@ body {
         transform: scale(1.5) rotate(-45deg);
     }
 }
-
