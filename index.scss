@@ -20,6 +20,90 @@ body {
 .container {
     position: relative;
     width: 100%;
+    .gray-section {
+            background-color: #f5f5f5;
+            position: relative;
+            width: 100%;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &-icon {
+                width: 35%;
+            }
+
+            &-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 50px;
+            }
+            p {
+                margin: 18px 0;
+                padding: 0 20px 0 20px;
+            }
+        }
+        .photos {
+            position: relative;
+            border-radius: 0;
+            box-shadow: 0px 2px 17px 0px rgba(0, 0, 0, 0.75);
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 20px;
+            .slider-container {
+                position: relative;
+                width: 100%;
+                display: flex;
+                overflow-x: scroll;
+                /* Vamos a añadir esto 👇 */
+                scroll-snap-type: x mandatory;
+            }
+        
+            .polaroid {
+                position: relative;
+                box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.75);
+                padding: 15px 15px 40px 15px;
+                margin: 5px;
+        
+                flex: 0 0 70%;
+                object-fit: cover;
+                /* Vamos a añadir esto 👇 */
+                scroll-snap-align: center;
+                img {
+                    position: relative;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        
+        }
+
+
+.countdown {
+    border-radius: 0;
+    box-shadow: 0px 2px 17px 0px rgba(0, 0, 0, 0.75);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 50px 0 50px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .clock {
+        display: flex;
+        justify-content: center;
+        font-family: "Quattrocento", serif;
+
+        &>.time-box+.time-box {
+            border-left: solid #6c6c6c;
+        }
+
+        .time-box {
+            padding: 0 10px 0 10px;
+        }
+    }
+}
 }
 
 .front-page {
@@ -91,6 +175,8 @@ body {
     font-size: 45px;
     color: #c08f40;
     margin-bottom: 20px;
+    width: 80%;
+    margin-top: 30px;
 }
 
 .subtitle {
@@ -99,31 +185,6 @@ body {
     font-style: normal;
     font-size: 35px;
     color: #c08f40;
-}
-
-.countdown {
-    box-shadow: 0px 2px 17px 0px rgba(0, 0, 0, 0.75);
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding: 50px 0 50px 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .clock {
-        display: flex;
-        justify-content: center;
-        font-family: "Quattrocento", serif;
-
-        &>.time-box+.time-box {
-            border-left: solid #6c6c6c;
-        }
-
-        .time-box {
-            padding: 0 10px 0 10px;
-        }
-    }
 }
 
 .ceremony-party {
@@ -137,37 +198,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        .ceremony,
-        .party {
-            background-color: #f5f5f5;
-            position: relative;
-            width: 100%;
-            border-radius: 20px;
-
-            &-rings-image {
-                width: 35%;
-            }
-
-            &-info {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-bottom: 50px;
-            }
-
-            p {
-                margin: 18px 0;
-            }
-        }
     }
-}
-
-.photos {
-    box-shadow: 0px 2px 17px 0px rgba(0, 0, 0, 0.75);
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding-bottom: 20px;
 }
 
 .quattrocento-regular {
@@ -281,37 +312,3 @@ body {
     }
 }
 
-.photos {
-    position: relative;
-
-    .slider-container {
-        position: relative;
-        display: flex;
-        overflow-x: scroll;
-        gap: 30px;
-        /* Vamos a añadir esto 👇 */
-        scroll-snap-type: x mandatory;
-    }
-
-    .polaroid {
-        position: relative;
-        width: 80%;
-        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
-        padding: 20px 20px 40px 20px;
-        margin: 10px;
-
-        img {
-            position: relative;
-            width: 100%;
-            object-fit: cover;
-        }
-    }
-
-    .slider-item {
-        flex: 0 0 80%;
-        width: 80%;
-        object-fit: cover;
-        /* Vamos a añadir esto 👇 */
-        scroll-snap-align: center;
-    }
-}
