@@ -314,7 +314,8 @@
             </div>
             <div class="title1"> Retratos de nuestro amor</div>
             <img src="./resources/images/camera.gif" class="gray-section-icon">
-            <div class="slider-container">  
+            <!-- <div class="slider-container">  
+
                 <div class="polaroid">
                     <img
                     src="https://images.unsplash.com/photo-1580501170961-bb0dbf63a6df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80"
@@ -331,7 +332,8 @@
                   src="https://images.unsplash.com/photo-1572508589584-94d778209dd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
                 />
                 </div>
-              </div>  
+              </div>   -->
+              
               <div class="adornos">
                 <svg xmlns="http://www.w3.org/2000/svg" width="" height="6" viewBox="0 0 206 6" fill="" data-inject-url="https://www.fixdate.io/modelo-invitacion/125/img/adorno_divisor.svg" class="injectable adorno-borde">
 
@@ -394,9 +396,96 @@
                   
                   </svg>
             </div>
+            <div class="carousel">
+              <div class="carousel-track" id="track">
+                <!-- Slides go here -->
+                <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1572508589584-94d778209dd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80" alt=""></div>
+                <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1572508589584-94d778209dd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80" alt=""></div>
+                <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1572508589584-94d778209dd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80" alt=""></div>
+
+              </div>
+            </div>
+            
+            <div class="dots"></div>
         </section>
         <section class="party-info">fiesta info</section>
     </div>
+    <script>
+      const track = document.getElementById('track');
+      const originalSlides = Array.from(track.children);
+      const dotsContainer = document.querySelector('.dots');
+      const slideCount = originalSlides.length;
+    
+      // Clone last and first slides for both directions
+      originalSlides.slice(-1).forEach(slide => {
+        const clone = slide.cloneNode(true);
+        track.insertBefore(clone, track.firstChild);
+      });
+    
+      originalSlides.forEach(slide => {
+        const clone = slide.cloneNode(true);
+        track.appendChild(clone);
+      });
+    
+      const allSlides = Array.from(track.children);
+      let currentIndex = 1; // Start at the real first slide (index 1 after prepend)
+    
+      function createDots() {
+        for (let i = 0; i < slideCount; i++) {
+          const dot = document.createElement('span');
+          dot.classList.add('dot');
+          if (i === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => goToSlide(i + 1)); // +1 for offset
+          dotsContainer.appendChild(dot);
+        }
+      }
+    
+      function updateDots() {
+        dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
+          dot.classList.toggle('active', (currentIndex - 1 + slideCount) % slideCount === i);
+        });
+      }
+    
+      function updateSlideClasses() {
+        allSlides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === currentIndex);
+        });
+      }
+    
+      function goToSlide(index) {
+        currentIndex = index;
+        track.style.transition = 'transform 0.5s ease';
+        track.style.transform = `translateX(${-currentIndex * 100}%)`;
+        updateSlideClasses();
+        updateDots();
+      }
+    
+      function nextSlide() {
+        currentIndex++;
+        track.style.transition = 'transform 0.5s ease';
+        track.style.transform = `translateX(${-currentIndex * 100}%)`;
+        updateSlideClasses();
+        updateDots();
+    
+        // Reset to original first after clone
+        if (currentIndex === allSlides.length - 1) {
+          setTimeout(() => {
+            track.style.transition = 'none';
+            currentIndex = 1;
+            track.style.transform = `translateX(${-currentIndex * 100}%)`;
+            updateSlideClasses();
+          }, 500);
+        }
+      }
+    
+      function startAutoPlay() {
+        setInterval(nextSlide, 3000);
+      }
+    
+      createDots();
+      goToSlide(currentIndex);
+      startAutoPlay();
+    </script>
 
 </body>
 
